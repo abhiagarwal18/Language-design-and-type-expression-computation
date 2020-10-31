@@ -10,6 +10,8 @@ Source code for a Type Expression Parser.
 ### Execution ###
 Compitability: GCC version 5.4.0 on Ubuntu 16.04.
 1.Clone the repository.
+
 2.Run the makefile using the command (compilation): make parser
+
 3.Execute using the command: ./parser <testcase.txt>
 
