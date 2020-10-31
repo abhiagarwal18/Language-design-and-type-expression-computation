@@ -1,0 +1,80 @@
+<program> <KEY_PROG> <BO> <BC> <CURLO> <decl_list> <assgn_list> <CURLC>
+<decl_list> <decl_stmt> <decl_list> 
+<decl_list>  <decl_stmt>
+<assgn_list> <assgn_stmt> <assgn_list>
+<assgn_list> <assgn_stmt>
+
+<index> <INT> 
+<index> <ID>
+<rng> <index> <ROP> <index>
+<type> <KEY_INT>
+<type> <KEY_REAL> 
+<type> <KEY_BOOL>
+<array_range> <SQO> <rng> <SQC> <array_range> 
+<array_range> <SQO> <rng> <SQC> 
+<dtype> <type>
+<dtype> <KEY_ARR> <array_range> <KEY_OF> <KEY_INT>
+<jagged2_dec> <KEY_JAG> <KEY_ARR> <SQO> <rng> <SQC> <SQO> <SQC> <KEY_OF> <KEY_INT>
+<jagged3_dec> <KEY_JAG> <KEY_ARR> <SQO> <rng> <SQC> <SQO> <SQC> <SQO> <SQC> <KEY_OF> <KEY_INT>
+
+<one_or_more_var> <ID> <one_or_more_var>
+<one_or_more_var> <ID>
+<listvar> <ID> <one_or_more_var>
+<decl_stmt> <singlevar_dec>
+<decl_stmt> <multivar_dec>
+<singlevar_dec> <KEY_DECL> <ID> <CLN> <dtype> <SEMCOL>
+<singlevar_dec> <KEY_DECL> <ID> <CLN> <jagged2_dec> <SEMCOL> <jagged2_init>
+<singlevar_dec> <KEY_DECL> <ID> <CLN> <jagged3_dec> <SEMCOL> <jagged3_init>
+<multivar_dec> <KEY_DECL> <KEY_LIST> <KEY_OF> <KEY_VARS> <listvar> <CLN> <dtype> <SEMCOL>
+<multivar_dec> <KEY_DECL> <KEY_LIST> <KEY_OF> <KEY_VARS> <listvar> <CLN> <jagged2_dec> <SEMCOL> <jagged2_init> 
+<multivar_dec> <KEY_DECL> <KEY_LIST> <KEY_OF> <KEY_VARS> <listvar> <CLN> <jagged3_dec> <SEMCOL> <jagged3_init>
+
+<jagged2_idx> <SEMCOL> <INT> <jagged2_idx>
+<jagged2_idx> e 
+<jagged2_rng> <INT> <jagged2_idx>
+
+<jagged3_idx> <INT> <jagged3_idx> 
+<jagged3_idx> e
+<jagged3_rng> <jagged3_idx> <SEMCOL> <jagged3_rng>
+<jagged3_rng> <jagged3_idx>
+
+<jagged2_single_init> <R1> <SQO> <INT> <SQC> <CLN> <KEY_SIZE> <INT> <CLN> <KEY_VALS> <CURLO> <jagged2_rng> <CURLC>
+<jagged3_single_init> <R1> <SQO> <INT> <SQC> <CLN> <KEY_SIZE> <INT> <CLN> <KEY_VALS> <CURLO> <jagged3_rng> <CURLC>
+
+<jagged2_init> <jagged2_single_init> <jagged2_init>
+<jagged2_init> <jagged2_single_init> 
+<jagged3_init> <jagged3_single_init> <jagged3_init>
+<jagged3_init> <jagged3_single_init> 
+
+<assgn_stmt> <var> <ASSGN> <expression> <SEMCOL>
+<array_sel> <index> <array_sel>
+<array_sel> <index> 
+<array_idx> <SQO> <array_sel> <SQC> 
+<var> <ID> <array_idx>
+<var> <ID> 
+
+<expression> <arithmetic_exp> 
+<expression> <boolean_exp> 
+<expression> <var> 
+<expression> <INT>
+
+<arithmetic_exp> <term> <OP_PLUS> <additive_term>
+<arithmetic_exp> <term> <OP_MINUS> <additive_term>
+<arithmetic_exp> <factor> <OP_STAR> <term>
+<arithmetic_exp> <factor> <OP_SLASH> <term>
+
+<additive_term> <term> <OP_PLUS> <additive_term>
+<additive_term> <term> <OP_MINUS> <additive_term>
+<additive_term> <term>
+<term> <factor> <OP_STAR> <term>
+<term> <factor> <OP_SLASH> <term>
+<term> <factor>
+<factor> <INT> 
+<factor> <var>
+
+<boolean_exp> <l_and_term> <OP_OR> <l_or_term>
+<boolean_exp> <var> <OP_AND> <l_and_term>
+<l_or_term> <OP_OR> <l_and_term> <l_or_term>
+<l_or_term> <l_and_term>
+<l_and_term> <var> <OP_AND> <l_and_term>
+<l_and_term> <var>
